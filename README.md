@@ -20,7 +20,7 @@ This project delivers a full end-to-end analytics solution for a **multi-branch 
 
 | Overview Page | Sales Page |
 |:---:|:---:|
-| ![Overview](dash1.png) | ![Sales](dash2.png) |
+| ![Overview](Dashboard/Overview.png) | ![Sales](Dashboard/Sales.png) |
 
 ---
 
@@ -121,53 +121,10 @@ Google Drive (CSV + JSON)
 
 ---
 
-## 🧠 Lessons Learned
-
-- Processing **11M+ rows** at scale requires columnar storage and proper partitioning — Databricks SQL handled this seamlessly
-- **ELT > ETL** at this data volume: transform after landing to preserve raw data fidelity
-- Building a proper **data model (Star Schema)** before visualization dramatically reduces Power BI query load time
-- **Fivetran** eliminated custom ingestion code and ensured reliable, scheduled syncs from Google Drive
-
----
-
-## 📁 Repository Structure
-
-```
-📦 egyptian-restaurant-analytics
- ┣ 📂 databricks/
- ┃ ┣ 📂 raw/          # Source ingestion scripts
- ┃ ┣ 📂 silver/       # Cleaning & transformation SQL
- ┃ ┗ 📂 gold/         # Business data models
- ┣ 📂 powerbi/
- ┃ ┗ 📄 dashboard.pbix
- ┣ 📂 docs/
- ┃ ┣ 🖼️ dash1.png
- ┃ ┗ 🖼️ dash2.png
- ┗ 📄 README.md
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Databricks workspace (with Unity Catalog recommended)
-- Fivetran account connected to Google Drive
-- Power BI Desktop
-
-### Steps
-1. **Configure Fivetran** connector to point to your Google Drive folder containing the source CSVs and JSONs
-2. **Run Databricks notebooks** in order: `raw` → `silver` → `gold`
-3. **Open `dashboard.pbix`** in Power BI Desktop and update the Databricks connection string
-4. **Refresh data** and explore the dashboard
-
----
-
 ## 👤 Author
 
-**[Your Name]**  
+**[Mohamed Magdy]**  
 Data Engineer | Analytics Enthusiast  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/yourprofile)
 
 ---
 
